@@ -1,7 +1,7 @@
 %-------------------------
 % Resume CV (General)
 % Author : Hongrui Zhang
-% Edition: 2023
+% Edition: 09/2025
 %------------------------
 
 
@@ -27,7 +27,7 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[L]{Hongrui Zhang} % Your name at the left bottom corner
-\fancyfoot[R]{jackzhang010603@gmail.com \vspace{1pt}\rule{\textwidth}{0.4pt}} % Your email with border line above
+\fancyfoot[R]{jackzhang010603@gmail.com}
 \renewcommand{\footrulewidth}{0pt} % Remove the default footer rule
 
 \textheight=9.75in
@@ -41,52 +41,52 @@
 \setlist[itemize]{leftmargin=*}
 
 \newcommand{\resitem}[1]{\item #1\vspace{-2pt}}
+% Gray title box
 \newcommand{\resheading}[1]{%
+  \vspace{0.3cm}%
   {\small\colorbox{mygrey}{%
     \begin{minipage}{0.97\textwidth}\centering\textbf{#1 \vphantom{p\^{E}}}\end{minipage}%
   }}%
+  \vspace{0.2cm}%
 }
 \newcommand{\ressubheading}[2]{%
   \begin{tabular*}{6.62in}{l @{\extracolsep{\fill}} r}%
     \textbf{#1} & \textit{#2}%
   \end{tabular*}\vspace{-8pt}%
 }
-
+\setlist[itemize]{leftmargin=3em, itemsep=2pt, topsep=2pt}
 
 \begin{document}
 \begin{table}
-\begin{minipage}{4.5\linewidth}
-\setlength{\tabcolsep}{80pt}
+\begin{minipage}{\textwidth}
+\setlength{\tabcolsep}{20pt}
 \def\arraystretch{1.1}
-\begin{tabular}{ll}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} l}
 \textbf{\Large{Hongrui (Jack) Zhang}}  & 
 \faLinkedin\hspace{0.1cm}\href{https://www.linkedin.com/in/hongruizhang63}{LinkedIn} \\
-\textbf{\Large {1st Year Ph.D. Student}} & 
+\textbf{\Large {Ph.D. Student}} & 
 \faGithub:\href{https://github.com/hoz006}{GitHub} \\
 University of California - Riverside &
 %\href{https://www.researchgate.net/profile/your-name}{Research Gate} \\
 Phone No.: 302-898-6341 \\
 E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
-\end{tabular}
-\end{minipage}\hfill
+\end{tabular*}
+\end{minipage}
 \end{table}
 
 
-\resheading{\textbf{PROFILE}}\\[0.2cm]
-
-\begin{itemize}
-\item Passionate about the convergence of Electronics and Computer Science, I am driven to merge technologies to everyone's life. My academic journey included hands-on projects and coursework focused on advanced system design, optimization, as well as machine learning and software development. Proficient in hardware-software integration and familiar with programming languages like C++ and Python. Eager to apply my knowledge and skills in a dynamic engineering role, contributing to innovative solutions in computer systems development.
-\end{itemize}
+\resheading{\textbf{PROFILE}}\\
+\hspace*{15pt}Passionate second-year PhD student in Computer Science and Engineering looking for intern software/system engineering positions with experiences in sparse tensor algebra accelerations, GPU code development, and knowledge in AI/ML.
 
 \resheading{\textbf{EDUCATION}}\\
-\begin{itemize}
-  \item \textbf{Ph.D. Computer Science, University of California - Riverside}
-  \hfill Sep 2024 - Current \\
-   \hfill Riverside, California
-   
-  \item \textbf{B.S. Computer Engineering, University of California - San Diego}
-  \hfill Sep 2019 - Sep 2023 \\
-   \hfill San Diego, California
+
+\begin{tabular*}{\textwidth}{@{\hspace{0pt}}p{4.5in} @{\extracolsep{\fill}} r@{\hspace{12pt}}}
+\textbf{Ph.D. Computer Science, University of California - Riverside} & Sep 2024 -- Current \\
+\hspace{1em}Riverside, California & \\
+\\[-0.8em]
+\textbf{B.S. Computer Engineering, University of California - San Diego} & Sep 2019 -- Sep 2023 \\
+\hspace{1em}San Diego, California & \\
+\end{tabular*}
   
   % \item \textbf{KUASU Program, Kyoto University}
   %  \hfill Jul 2021 – Aug 2021 \\
@@ -95,22 +95,26 @@ E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
   %\item \textbf{Higher Secondary / +2} \\
   %School Name, Delhi \\
   %Percentage: XX.XX \hfill 2019 – 2021
-\end{itemize}
 
 \resheading{\textbf{PROJECTS \& CONTRIBUTIONS}}\\
+
+\textbf{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations} \\
+\hspace*{15pt}Lab: ESCAL, Riverside \hfill September 2023 – Present
 \begin{itemize}
-  \item \textbf{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations} \\
-  Developed and published a novel framework leveraging Nvidia RTX ray tracing hardware to accelerate sparse matrix computations. Demonstrated significant performance benefits over traditional SpGEMM methods using OptiX and CUDA. \\
-  \textit{Published Paper:} \href{https://dl.acm.org/doi/10.1145/3695053.3731072}{ACM Digital Library: RTSpMSpM Publication} \\
-  Lab: ESCAL, Riverside \hfill Sep 2023 - Present
+    \item Designed the algorithm that maps the sparse matrix multiplications (SpMSpM) into ray tracing problems to enable the use of ray tracing accelerators in solving SpMSpM.
+    \item Developed a library that realized the proposed algorithm using OptiX and CUDA to achieve 1.85× speedup over cuSPARSE on NVIDIA’s RT Cores.
+    \item Integrated the developed library into a graph neural network training framework using CUDA and Python to achieve more than 3× speedup on NVIDIA RTX 4090 GPUs.
+  \end{itemize}
   
- \item \textbf{Machine Learning in Music} \\
-  Projects include random music generation, classifying audio genre, autoencoder network... etc. Course: CSE 190    \\
-   \hfill June 2023 - Auguest 2023
-  
-  \item \textbf{Android Software Engineering} \\
-  Interactive map \& social media application development. Course: CSE 110      \hfill January 2023 - March 2023
-\end{itemize}
+\vspace{8pt} % adjust gap between project blocks
+
+\textbf{Machine Learning in Music} \hfill June 2023 – August 2023
+  \begin{itemize}
+    \item Developed a system using PyTorch and autoencoder network to generates music clips based on the audio genre within 3 minutes using LSTM.
+    \item Built an audio genre classification system using CNN and spectrograms.
+    \item Trained autoencoder networks for feature compression and denoising. 
+  \end{itemize}
+
 
 \resheading{\textbf{TECHNICAL SKILLS}}\\
 \begin{itemize}
@@ -126,6 +130,7 @@ E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
   \item \textbf{Operating Systems and Simulation Software} \\
   Linux (Ubuntu), Windows, MATLAB, LTSpice, Multisim, Proteus
 \end{itemize}
+
 
 %\resheading{\textbf{ACHIEVEMENTS / AWARDS}}\\
 %\begin{itemize}
@@ -145,6 +150,12 @@ E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
 %\begin{itemize}
 %  \item \textbf{Research Title 1} \hfill [timeline]
 %\end{itemize}
+\resheading{\textbf{PUBLICATIONS}}\\
+
+\hspace*{0pt}%
+\begin{minipage}{\dimexpr\linewidth-20pt}
+\textbf{Zhang Hongrui}, Zhang Yunan, Tseng Hung‑Wei. (2025). \textit{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations}. In \textit{Proceedings of the 52nd Annual International Symposium on Computer Architecture (ISCA ’25)}, pages 359‑373. \href{https://dl.acm.org/doi/10.1145/3695053.3731072}{DOI: 10.1145/3695053.3731072}
+\end{minipage}
 
 %\resheading{\textbf{WORKSHOPS AND CONFERENCES}}\\
 %\begin{itemize}
