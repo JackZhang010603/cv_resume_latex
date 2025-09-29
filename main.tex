@@ -56,6 +56,8 @@
 }
 \setlist[itemize]{leftmargin=3em, itemsep=2pt, topsep=2pt}
 
+
+
 \begin{document}
 \begin{table}
 \begin{minipage}{\textwidth}
@@ -76,7 +78,13 @@ E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
 
 
 \resheading{\textbf{PROFILE}}\\
-\hspace*{15pt}Passionate second-year PhD student in Computer Science and Engineering looking for intern software/system engineering positions with experiences in sparse tensor algebra accelerations, GPU code development, and knowledge in AI/ML.
+\hspace*{15pt}%
+\begin{minipage}{\dimexpr\linewidth-15pt}
+\raggedright % avoid hyphanation
+Passionate second-year PhD student in Computer Science and Engineering looking for intern software engineering positions with experiences in sparse tensor algebra accelerations, GPU code development, and knowledge in AI/ML.
+\end{minipage}
+
+% TODO: can edit based on role. looking for intern software/system engineering positions adjust for differen position
 
 \resheading{\textbf{EDUCATION}}\\
 
@@ -109,12 +117,11 @@ E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
 \vspace{8pt} % adjust gap between project blocks
 
 \textbf{Machine Learning in Music} \hfill June 2023 – August 2023
-  \begin{itemize}
-    \item Developed a system using PyTorch and autoencoder network to generates music clips based on the audio genre within 3 minutes using LSTM.
-    \item Built an audio genre classification system using CNN and spectrograms.
-    \item Trained autoencoder networks for feature compression and denoising. 
-  \end{itemize}
-
+\begin{itemize}
+  \item Developed a genre-conditioned music generation system using PyTorch, LSTM, and autoencoders to synthesize short audio clips (\textasciitilde3 minutes) matching target styles.
+  \item Trained a convolutional neural network (CNN) using mel spectrogram inputs to classify music tracks by genre, achieving over 85\% accuracy on a curated dataset.
+  \item Applied autoencoder-based compression and denoising to enhance audio quality and reduce input dimensionality for downstream learning tasks.
+\end{itemize}
 
 \resheading{\textbf{TECHNICAL SKILLS}}\\
 \begin{itemize}
@@ -154,7 +161,10 @@ E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
 
 \hspace*{0pt}%
 \begin{minipage}{\dimexpr\linewidth-20pt}
-\textbf{Zhang Hongrui}, Zhang Yunan, Tseng Hung‑Wei. (2025). \textit{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations}. In \textit{Proceedings of the 52nd Annual International Symposium on Computer Architecture (ISCA ’25)}, pages 359‑373. \href{https://dl.acm.org/doi/10.1145/3695053.3731072}{DOI: 10.1145/3695053.3731072}
+Hongrui Zhang, Yunan Zhang, and Hung-Wei Tseng. 2025.
+\textit{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations}.
+In \textit{Proceedings of the 52nd Annual International Symposium on Computer Architecture (ISCA ’25).} Association for Computing Machinery, New York, NY, USA, 359–373.
+\href{https://doi.org/10.1145/3695053.3731072} {https://doi.org/10.1145/3695053.3731072}
 \end{minipage}
 
 %\resheading{\textbf{WORKSHOPS AND CONFERENCES}}\\
