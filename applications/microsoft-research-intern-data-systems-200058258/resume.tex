@@ -74,25 +74,22 @@
   {Sep 2019 -- Sep 2023}
 
 \resheading{RESEARCH EXPERIENCE}
-{\small ESCAL Laboratory, University of California, Riverside \textbar\ Advisor: Hung-Wei Tseng\par}
 
 \resumeentry{GPU-Accelerated Database Systems and Matrix-Native Query Processing}
   {Jun 2026 -- Present}
   {Python, PyTorch, SQL, CUDA, cuSPARSE \textbar\ Query execution and experimental evaluation}
 \begin{itemize}
-  \item Developed and correctness-validated a matrix-native algorithm for TPC-H Q3, reformulating joins, group-by, and aggregation using sparse matrix and tensor operations.
-  \item Optimized TCUDB-style sparse joins using direct one-hot CSR construction, reducing Q4 join latency from 40.5 ms to 11.0 ms (3.7×) over generic COO construction at TPC-H SF10.
+  \item Developed and validated a matrix-native execution plan for TPC-H Q3, expressing joins, grouping, and aggregation using sparse matrix and tensor operations.
+  \item Optimized TCUDB-style sparse joins using direct one-hot CSR construction, reducing Q4 join latency from 40.5 ms to 11.0 ms (3.7$\times$) over generic COO construction at TPC-H SF10.
   \item Implemented and SQL-validated PyTorch execution plans for all 22 TPC-H queries, profiling GPU bottlenecks on an RTX 5090 to guide hardware-aware query processing.
 \end{itemize}
 
-\resumeentry{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations}
+\resumeentry{RTSpMSpM — RT-Core-Accelerated Sparse Matrix Multiplication}
   {Sep 2023 -- Sep 2025}
   {\textbf{ISCA '25} \textbar\ First author and conference presenter \textbar\ OptiX, CUDA, C++, Python}
 \begin{itemize}
-  \item Designed an algorithm that maps sparse matrix--matrix multiplication to ray-tracing operations, enabling NVIDIA RT Cores to accelerate non-graphics sparse computation.
-  \item Developed a library that realized the proposed algorithm using OptiX and CUDA to achieve 1.85× speedup over cuSPARSE
-on NVIDIA’s RT Cores.
-  \item Proposed RT core architectural enhancements, including fused intersection-multiplication and hardware row accumulation, achieving 3.06× simulated speedup over cuSPARSE with only 0.2{\%} estimated area overhead.
+  \item Designed and implemented an OptiX/CUDA library mapping sparse matrix multiplication onto NVIDIA RT Cores, achieving up to 1.85$\times$ speedup over cuSPARSE.
+  \item Proposed RT core architectural enhancements, including fused intersection-multiplication and hardware row accumulation, achieving 3.06$\times$ simulated speedup over cuSPARSE with only 0.2{\%} estimated area overhead.
   \item Integrated the library into a graph neural network training framework using CUDA and Python, achieving more than 3$\times$ speedup on NVIDIA RTX 4090.
 \end{itemize}
 
