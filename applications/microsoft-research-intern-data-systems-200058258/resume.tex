@@ -1,0 +1,114 @@
+% Tailored for Microsoft Research Redmond - Research Intern, Data Systems.
+% Requisition: 200058258; portal: 1970393557008574.
+% https://apply.careers.microsoft.com/careers/job/1970393557008574
+% Sources: master/ and the long-form root main.tex; prepared 2026-10-07.
+% Build from this directory:
+% latexmk -pdf -jobname=Hongrui_Zhang_Microsoft_Data_Systems_2026-10-07 resume.tex
+
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.5in,nohead,includefoot,footskip=18pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+\hypersetup{
+  pdftitle={Hongrui Zhang - Microsoft Research Data Systems},
+  pdfauthor={Hongrui Zhang}
+}
+\definecolor{sectiongray}{gray}{0.92}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\small Hongrui Zhang}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt,topsep=4pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+\urlstyle{same}
+\emergencystretch=1em
+
+% Section headings account for colorbox padding and stay with following text.
+\newcommand{\resheading}[1]{%
+  \par\addvspace{10pt}%
+  \noindent\colorbox{sectiongray}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\strut\small\textbf{#1}}%
+  }\par\nobreak\vspace{4pt}\nopagebreak[4]%
+}
+
+% Wrapping titles leave a separate column for dates.
+\newcommand{\resumeentry}[3]{%
+  \par\addvspace{6pt}%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}%
+    \textbf{#1} & {\small #2}\\%
+  \end{tabularx}\par\nobreak%
+  {\small #3\par}\nobreak\nopagebreak[4]%
+}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{24}{27}\selectfont\textbf{Hongrui (Jack) Zhang}}\\[3pt]
+  {\large Computer Science Ph.D. Researcher \textbar\ Data Systems and GPU Computing}\\[5pt]
+  Irvine, California\enspace\textbar\enspace 302-898-6341\enspace\textbar\enspace
+  \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com}\\[2pt]
+  \href{https://www.linkedin.com/in/hongruizhang63}{LinkedIn}\enspace\textbar\enspace
+  \href{https://hongruizhang.com}{hongruizhang.com}
+\end{center}
+\vspace{-4pt}
+
+\resheading{EDUCATION}
+\resumeentry{Ph.D. in Computer Science, University of California, Riverside}
+  {Sep 2024 -- Expected Jun 2028}
+  {Advisor: Hung-Wei Tseng }
+
+\resumeentry{B.S. in Computer Engineering, University of California, San Diego}
+  {Sep 2019 -- Sep 2023}
+
+\resheading{RESEARCH EXPERIENCE}
+{\small ESCAL Laboratory, University of California, Riverside \textbar\ Advisor: Hung-Wei Tseng\par}
+
+\resumeentry{GPU-Accelerated Database Systems and Matrix-Native Query Processing}
+  {Jun 2026 -- Present}
+  {Python, PyTorch, SQL, CUDA, cuSPARSE \textbar\ Query execution and experimental evaluation}
+\begin{itemize}
+  \item Developed and correctness-validated a matrix-native algorithm for TPC-H Q3, reformulating joins, group-by, and aggregation using sparse matrix and tensor operations.
+  \item Optimized TCUDB-style sparse joins using direct one-hot CSR construction, reducing Q4 join latency from 40.5 ms to 11.0 ms (3.7×) over generic COO construction at TPC-H SF10.
+  \item Implemented and SQL-validated PyTorch execution plans for all 22 TPC-H queries, profiling GPU bottlenecks on an RTX 5090 to guide hardware-aware query processing.
+\end{itemize}
+
+\resumeentry{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations}
+  {Sep 2023 -- Sep 2025}
+  {\textbf{ISCA '25} \textbar\ First author and conference presenter \textbar\ OptiX, CUDA, C++, Python}
+\begin{itemize}
+  \item Designed an algorithm that maps sparse matrix--matrix multiplication to ray-tracing operations, enabling NVIDIA RT Cores to accelerate non-graphics sparse computation.
+  \item Developed a library that realized the proposed algorithm using OptiX and CUDA to achieve 1.85× speedup over cuSPARSE
+on NVIDIA’s RT Cores.
+  \item Proposed RT core architectural enhancements, including fused intersection-multiplication and hardware row accumulation, achieving 3.06× simulated speedup over cuSPARSE with only 0.2{\%} estimated area overhead.
+  \item Integrated the library into a graph neural network training framework using CUDA and Python, achieving more than 3$\times$ speedup on NVIDIA RTX 4090.
+\end{itemize}
+
+\resheading{SELECTED PUBLICATION}
+\textbf{Hongrui Zhang}, Yunan Zhang, and Hung-Wei Tseng.
+``RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations.''
+\textit{52nd International Symposium on Computer Architecture (ISCA '25)}, 2025.
+\href{https://doi.org/10.1145/3695053.3731072}{\textbf{[DOI]}}
+
+\resheading{TECHNICAL SKILLS}
+\begin{itemize}[label={},leftmargin=0pt,itemsep=4pt]
+  \item \textbf{Languages used in research:} Python, C++, SQL, CUDA C++, C, Bash.
+  \item \textbf{Data systems:} Relational and tensor algebra, query execution, joins and aggregation, TPC-H, MonetDB, TQP-style tensor plans, TCUDB reproduction, sparse COO representations.
+  \item \textbf{Research software:} PyTorch, CUDA, NVIDIA OptiX, cuSPARSE, NumPy, XGBoost.
+  \item \textbf{Experimental methods and tools:} SQL correctness validation, controlled benchmarks, end-to-end evaluation, Nsight Systems, Nsight Compute, PyTorch Profiler, roofline analysis, NVBit memory tracing, CUDA events.
+  \item \textbf{Development tools:} Linux/Ubuntu, Git, Docker, gdb, vim.
+\end{itemize}
+
+\end{document}
