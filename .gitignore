@@ -1,1 +1,31 @@
 .DS_Store
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Generated PDF (the checked-in Hongrui_Resume.pdf remains tracked)
+/main.pdf
+
+# CMake build directories
+/build/
+/cmake-build-*/
