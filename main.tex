@@ -1,210 +1,190 @@
-%-------------------------
-% Resume CV (General)
-% Author : Hongrui Zhang
-% Edition: 09/2025
-%------------------------
+% Long-form working resume for Hongrui (Jack) Zhang.
+% Keep factual updates consistent with the complete source of truth in master/.
+% Derive shorter general and position-specific versions from this document.
 
-
-\documentclass[10pt,article]{article}
-\usepackage[letterpaper,margin=0.2in]{geometry}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{url}
-\usepackage{enumitem}
-\usepackage{palatino}
-\usepackage{fontawesome}
-
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.5in,nohead,includefoot,footskip=18pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{enumitem}
 \usepackage{xcolor}
-\definecolor{mygrey}{gray}{0.82}
-
-\usepackage{hyperref} % Added hyperref package for clickable links
-
-% Added fancyhdr package for header and footer customization
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
+
+\hypersetup{
+  pdftitle={Hongrui Zhang - Resume},
+  pdfauthor={Hongrui Zhang}
+}
+\definecolor{sectiongray}{gray}{0.92}
 \pagestyle{fancy}
 \fancyhf{}
+\fancyfoot[L]{\small Hongrui Zhang}
+\fancyfoot[R]{\small\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{Hongrui Zhang} % Your name at the left bottom corner
-\fancyfoot[R]{jackzhang010603@gmail.com}
-\renewcommand{\footrulewidth}{0pt} % Remove the default footer rule
-
-\textheight=9.75in
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt,topsep=4pt,parsep=0pt,partopsep=0pt}
 \raggedbottom
+\urlstyle{same}
+\emergencystretch=1em
 
-\setlength{\tabcolsep}{0in}
-\newcommand{\isep}{-4pt}
-\newcommand{\lsep}{-2cm}
-\newcommand{\psep}{-1cm}
-
-\setlist[itemize]{leftmargin=*}
-
-\newcommand{\resitem}[1]{\item #1\vspace{-2pt}}
-% Gray title box
+% Section headings account for colorbox padding and stay with following text.
 \newcommand{\resheading}[1]{%
-  \vspace{0.3cm}%
-  {\small\colorbox{mygrey}{%
-    \begin{minipage}{0.97\textwidth}\centering\textbf{#1 \vphantom{p\^{E}}}\end{minipage}%
-  }}%
-  \vspace{0.2cm}%
+  \par\addvspace{10pt}%
+  \noindent\colorbox{sectiongray}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\strut\small\textbf{#1}}%
+  }\par\nobreak\vspace{4pt}\nopagebreak[4]%
 }
-\newcommand{\ressubheading}[2]{%
-  \begin{tabular*}{6.62in}{l @{\extracolsep{\fill}} r}%
-    \textbf{#1} & \textit{#2}%
-  \end{tabular*}\vspace{-8pt}%
+
+% Wrapping titles leave a separate column for dates.
+\newcommand{\resumeentry}[3]{%
+  \par\addvspace{6pt}%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}%
+    \textbf{#1} & {\small #2}\\%
+  \end{tabularx}\par\nobreak%
+  {\small #3\par}\nobreak\nopagebreak[4]%
 }
-\setlist[itemize]{leftmargin=3em, itemsep=2pt, topsep=2pt}
-
-
 
 \begin{document}
-\begin{table}
-\begin{minipage}{\textwidth}
-\setlength{\tabcolsep}{20pt}
-\def\arraystretch{1.1}
-\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} l}
-\textbf{\Large{Hongrui (Jack) Zhang}}  & 
-\faLinkedin\hspace{0.1cm}\href{https://www.linkedin.com/in/hongruizhang63}{LinkedIn} \\
-\textbf{\Large {Ph.D. Student}} & 
-\faGithub:\href{https://github.com/hoz006}{GitHub} \\
-University of California - Riverside &
-%\href{https://www.researchgate.net/profile/your-name}{Research Gate} \\
-Phone No.: 302-898-6341 \\
-E-mail: \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com} \\
-\end{tabular*}
-\end{minipage}
-\end{table}
 
+% Header: contact decisions follow the master source notes.
+\begin{center}
+  {\fontsize{24}{27}\selectfont\textbf{Hongrui (Jack) Zhang}}\\[3pt]
+  {\large Computer Science Ph.D. Researcher}\\[5pt]
+  Irvine, California\enspace\textbar\enspace 302-898-6341\enspace\textbar\enspace
+  \href{mailto:jackzhang010603@gmail.com}{jackzhang010603@gmail.com}\\[2pt]
+  \href{https://www.linkedin.com/in/hongruizhang63}{LinkedIn}\enspace\textbar\enspace
+  \href{https://hongruizhang.com}{hongruizhang.com}
+\end{center}
+\vspace{-4pt}
 
-\resheading{\textbf{PROFILE}}\\
-\hspace*{15pt}%
-\begin{minipage}{\dimexpr\linewidth-15pt}
-\raggedright % avoid hyphanation
-Computer Science PhD researcher specializing in GPU-accelerated systems, database query processing, and high-performance computing. Research experience includes CUDA, Tensor Cores, ray-tracing accelerators, tensor algebra, GPU performance optimization, and an ISCA'25 publication. Seeking Summer 2027 research/engineering internships in GPU systems, computer architecture, database systems, or ML systems.
-\end{minipage}
+\resheading{PROFILE}
+Computer Science Ph.D. researcher focused on GPU systems, computer architecture, and data-intensive computing.
+First author and presenter of an ISCA 2025 paper, with experience in algorithm--hardware mapping,
+correctness validation, system integration, and end-to-end performance analysis.
+Seeking Summer 2027 research and engineering internships.
 
-% TODO: can edit based on role. looking for intern software/system engineering positions adjust for differen position
-
-\resheading{\textbf{EDUCATION}}\\
-
-\begin{tabular*}{\textwidth}{@{\hspace{0pt}}p{4.5in} @{\extracolsep{\fill}} r@{\hspace{12pt}}}
-\textbf{Ph.D. Computer Science, University of California - Riverside} & Sep 2024 -- Expected 2028 \\
-\hspace{1em}Riverside, California & \\
-\\[-0.8em]
-\textbf{B.S. Computer Engineering, University of California - San Diego} & Sep 2019 -- Sep 2023 \\
-\hspace{1em}San Diego, California & \\
-\end{tabular*}
-  
-  % \item \textbf{KUASU Program, Kyoto University}
-  %  \hfill Jul 2021 – Aug 2021 \\
-  %  \hfill
-
-  %\item \textbf{Higher Secondary / +2} \\
-  %School Name, Delhi \\
-  %Percentage: XX.XX \hfill 2019 – 2021
-
-\resheading{\textbf{RESEARCH EXPERIENCE}}\\
-
-\textbf{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations} \\
-\hspace*{15pt}Lab: ESCAL, Riverside \quad Advisor: Hung-Wei, Tseng\hfill September 2023 – Present
+\resheading{EDUCATION}
+\resumeentry{Ph.D. in Computer Science, University of California, Riverside}
+  {Sep 2024 -- Expected Jun 2028}
+  {Riverside, California \textbar\ Advisor: Hung-Wei Tseng \textbar\ ESCAL Laboratory}
 \begin{itemize}
-    \item Designed the algorithm that maps the sparse matrix multiplications (SpMSpM) into ray tracing problems to enable the use of ray tracing accelerators in solving SpMSpM.
-    \item Developed a library that realized the proposed algorithm using OptiX and CUDA to achieve 1.85× speedup over cuSPARSE on NVIDIA’s RT Cores.
-    \item Integrated the developed library into a graph neural network training framework using CUDA and Python to achieve more than 3× speedup on NVIDIA RTX 4090 GPUs.
-  \end{itemize}
-  
-\vspace{8pt} % adjust gap between project blocks
+  \item Research focus: GPU systems, computer architecture, sparse and irregular computation, database query processing, and performance engineering.
+  \item Passed the oral qualifying examination, May 2026; presented ``Democratizing Ray Tracing Hardware.''
+\end{itemize}
+\resumeentry{B.S. in Computer Engineering, University of California, San Diego}
+  {Sep 2019 -- Sep 2023}
+  {San Diego, California}
 
-\textbf{Machine Learning in Music} \hfill June 2023 – August 2023
+\resheading{RESEARCH EXPERIENCE}
+{\small Extreme Scale Computer Architecture Laboratory (ESCAL), University of California, Riverside\\
+Advisor: Hung-Wei Tseng\par}
+
+% Ongoing work: preserve the distinction between validated functionality and speedup.
+\resumeentry{GPU-Accelerated Database Systems and Matrix-Native Query Processing}
+  {Jun 2026 -- Present}
+  {Python, PyTorch, CUDA, SQL, cuSPARSE}
 \begin{itemize}
-  \item Developed a genre-conditioned music generation system using PyTorch, LSTM, and autoencoders to synthesize short audio clips (\textasciitilde3 minutes) matching target styles.
-  \item Trained a convolutional neural network (CNN) using mel spectrogram inputs to classify music tracks by genre, achieving over 85\% accuracy on a curated dataset.
-  \item Applied autoencoder-based compression and denoising to enhance audio quality and reduce input dimensionality for downstream learning tasks.
+  \item Developing a correctness-validated Python/PyTorch prototype that represents relational query dataflows with tensor and matrix primitives; studying fusion across filtering, joins, grouping, and aggregation, with runtime evaluation ongoing.
+  \item Implemented TQP-style tensor plans for all \textbf{22 TPC-H queries}, including equijoins, semi-joins, anti-joins, correlated subqueries, grouping, sorting, dictionary-encoded predicates, and result materialization.
+  \item Built deterministic correctness validation against canonical SQL outputs and regression tests for SQL empty-aggregate behavior in Q14, Q15, Q17, and Q19.
+  \item Reproduced TCUDB microbenchmark patterns Q1, Q3, and Q4; implemented sparse COO membership-matrix joins in PyTorch and substituted them into TQP query plans.
+  \item Characterized join representations at TPC-H scale factor 10 (approximately 10 GB of generated data), finding many membership products below 0.04\% density; measured encoding, sparse-format construction, multiplication, extraction, and remaining operations separately.
+  \item Built paired end-to-end benchmarks from staged GPU tensors to final query results. Original TQP plans were faster in all \textbf{13 valid comparisons}, showing that representation construction frequently outweighed the benefits of the sparse matrix formulation.
+  \item Profiled Q1--Q20 and Q22 at SF10, and Q21 at SF2, on an RTX 5090 using PyTorch Profiler, Nsight Systems, Nsight Compute, and roofline analysis; measured empirical baselines of 63.029 TFLOP/s for FP32 GEMM with TF32 disabled and 1.575 TB/s for device bandwidth.
+  \item Identified bottlenecks in scatter/atomic aggregation, sorting, and gather/index operations; diagnosed Q1 contention on a small number of aggregation bins and DRAM-bound element-wise operations in Q1 and Q3.
+\end{itemize}
+
+% Negative-result study: final OptiX algorithm implementation is credited explicitly.
+\resumeentry{RTBoost: Ray-Tracing-Based Gradient-Boosted Tree Inference}
+  {Jan 2026 -- Jun 2026}
+  {OptiX, CUDA, XGBoost \textbar\ Collaborator: Andy Li}
+\begin{itemize}
+  \item Designed a mapping from gradient-boosted tree inference to ray-tracing acceleration structures, representing tree regions with axis-aligned bounding boxes (AABBs) and using ray traversal for batched inference.
+  \item Implemented model processing, workload generation, training, benchmarking, and early system components; collaborated with Andy Li, who implemented the final OptiX algorithm component.
+  \item Designed controlled workloads and evaluated synthetic three-dimensional forests with depths up to 12 and approximately 400 trees on RTX 4070, RTX 4090, and RTX 5090 GPUs.
+  \item Validated RTBoost3D on SSMCR, containing 110,204 three-dimensional points, and evaluated SUSY-3D; tested batched launches subject to OptiX launch-dimension limits.
+  \item Used Nsight and memory-trace analysis to investigate memory coalescing, control flow, traversal efficiency, and AABB-fetch stalls; identified invalid timings caused by failed kernel launches.
+  \item Co-designed and evaluated a layout using a reusable base AABB and transformed instances. Same-device evaluations remained slower than XGBoost; documented the limitations and paused the project after finding no robust performance advantage.
+\end{itemize}
+
+% Analysis-only work: no prototype implementation is claimed.
+\resumeentry{RTAttention: RT-Core Opportunity Analysis for Sparse Attention}
+  {Jun 2025 -- Jan 2026}
+  {PyTorch, CUDA \textbar\ Workload characterization and feasibility analysis}
+\begin{itemize}
+  \item Investigated whether ray-tracing hardware could accelerate the matrix-multiplication component of key/value processing in attention mechanisms.
+  \item Analyzed sparsity and inference performance in sparse-attention workloads to determine whether nominal sparsity could support a useful RT-core mapping.
+  \item Found insufficient useful sparsity in the targeted GEMM stage; concluded the feasibility study before prototype implementation and redirected effort to other workloads.
+\end{itemize}
+
+% First three bullets: algorithm novelty, measured performance, system integration.
+\resumeentry{RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations}
+  {Sep 2023 -- Sep 2025}
+  {\textbf{ISCA '25} \textbar\ First author and conference presenter \textbar\ OptiX, CUDA, C++, Python}
+\begin{itemize}
+  \item Designed an algorithm that maps sparse matrix--matrix multiplication (SpMSpM) to ray-tracing operations, enabling NVIDIA RT Cores to accelerate non-graphics sparse computation.
+  \item Led development of the OptiX/CUDA library implementing the mapping and achieved \textbf{up to 1.85$\times$ speedup over cuSPARSE}.
+  \item Integrated the library into a graph neural network training framework using CUDA and Python, achieving \textbf{more than 3$\times$ end-to-end training speedup} on an NVIDIA RTX 4090.
+  \item Created controlled sparse-matrix workload generators with diagonal, scattered, and corner-concentrated nonzero patterns to study input-layout sensitivity, traversal behavior, and matrix-reordering effects.
 \end{itemize}
 
 % Choose one publication version: comment out the active block and uncomment
-% the alternative block before compiling. Include the heading and minipage.
-% Version 1: compact citation (active).
-% \resheading{\textbf{PUBLICATIONS}}\\
-
-% \hspace*{0pt}%
-% \begin{minipage}{\dimexpr\linewidth-20pt}
+% the alternative block before compiling. Include its heading and citation.
+% Version 1: compact citation (commented out).
+% \resheading{PUBLICATIONS}
 % \textbf{Hongrui Zhang}, Yunan Zhang, and Hung-Wei Tseng.
 % ``RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations.''
 % \textbf{ISCA '25}, 2025.
 % \href{https://doi.org/10.1145/3695053.3731072}{[DOI]}
-% \end{minipage}
 
-% Version 2: full conference name (uncomment to use).
-\resheading{\textbf{SELECTED PUBLICATION}}\\
-
-\hspace*{0pt}%
-\begin{minipage}{\dimexpr\linewidth-20pt}
+% Version 2: full conference name (active).
+\resheading{SELECTED PUBLICATION}
 \textbf{Hongrui Zhang}, Yunan Zhang, and Hung-Wei Tseng.
 ``RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations.''
 \textit{52nd International Symposium on Computer Architecture (ISCA '25)}, 2025.
 \href{https://doi.org/10.1145/3695053.3731072}{\textbf{[DOI]}}
-\end{minipage}
 
-\resheading{\textbf{TECHNICAL SKILLS}}\\
+% Keep supporting experience together on the final page of the long version.
+\newpage
+\resheading{TEACHING EXPERIENCE}
+\resumeentry{Teaching Assistant, CS 10A}
+  {Fall 2025 -- Spring 2026}
+  {University of California, Riverside \textbar\ Introduction to Computer Science for Science, Mathematics, and Engineering I}
 \begin{itemize}
-  \item \textbf{Programming and Scripting Languages} \\
-  Python, C++, C, Bash
-
-  \item \textbf{Libraries and Frameworks} \\
-  NVIDIA OptiX, CUDA, cuSPARSE, NumPy, Docker
-
-  \item \textbf{Tools and Debuggers} \\
-  GitHub, gdb, jdb, vim
-
-  \item \textbf{Operating Systems and Simulation Software} \\
-  Linux (Ubuntu), Windows, MATLAB, LTSpice, Multisim, Proteus
+  \item Led programming laboratory sections of approximately \textbf{50 students per quarter} across Fall 2025, Winter 2026, and Spring 2026, within a course enrolling more than 200 students overall.
+  \item Guided coding exercises and debugging, reviewed student code, held office hours, and graded assignments and laboratory work.
+\end{itemize}
+\resumeentry{Teaching Assistant, CS 203: Advanced Computer Architecture}
+  {Fall 2025}
+  {University of California, Riverside \textbar\ Approximately 30 students}
+\begin{itemize}
+  \item Reviewed programming assignments, held office hours, and graded assignments and quizzes; supported students studying processor performance, memory hierarchy, branch prediction, out-of-order execution, and parallel architecture.
 \end{itemize}
 
+\resheading{MENTORING AND LEADERSHIP}
+\resumeentry{Undergraduate Project Mentor, Smart-Glasses Translation Assistant}
+  {Jul 2026 -- Aug 2026}
+  {Two undergraduate mentees \textbar\ C++, eye tracking, OCR, Gemma-assisted translation, audio output}
+\begin{itemize}
+  \item Led high-level planning and validation of a wearable translation application using eye tracking to select text, blink confirmation to initiate translation, and headphones for audio output.
+  \item Guided project decomposition, milestones, implementation choices, debugging, and progress reviews; supported \textbf{two undergraduates} through completion and demonstration of a working C++ prototype.
+\end{itemize}
 
-%\resheading{\textbf{ACHIEVEMENTS / AWARDS}}\\
-%\begin{itemize}
-%  \item \textbf{Achievement 1} \\
-%  Domain \hfill Oct 2018
-%\end{itemize}
-
-%\resheading{\textbf{POSITIONS OF RESPONSIBILITY}}\\
-%\begin{itemize}
-%  \item \textbf{Responsibility 1} \\
-%  Council Name \hfill June 2023 - Present
-
-%\end{itemize}
-
-
-%\resheading{\textbf{RESEARCH / PUBLICATIONS}}\\
-%\begin{itemize}
-%  \item \textbf{Research Title 1} \hfill [timeline]
-%\end{itemize}
-%\resheading{\textbf{WORKSHOPS AND CONFERENCES}}\\
-%\begin{itemize}
-%  \item \textbf{WORKSHOPS 1} \hfill May 2023
-%  \item \textbf{WORKSHOPS 2} \\
-%  Summer School Organized by XXXXXX \hfill May-June 2023%
-%
-%\end{itemize}
-
-
-%\resheading{\textbf{RELEVANT COURSES}}\\
-%\begin{itemize}
-%  \item \textbf{ECS204}: Signals and Systems \hfill 2022
-%  \item \textbf{ECS203}: Basic Electronics \hfill 2022
-%  \item \textbf{ECS102}: Introduction to Programming \hfill 2022
-%  \item \textbf{ECS201}: Discrete Mathematics \hfill 2022
-%\end{itemize}
-
-%\resheading{\textbf{EXTRACURRICULAR ACTIVITIES}}\\
-%\begin{itemize}
-%  \item \textbf{Extracurricular Activity 1} \hfill Bhopal, India \\
-%  Organisation Name \hfill May 2023
-%  
-%  \item \textbf{Extracurricular Activity 2} \hfill Bhopal, India \\
-%  Organisation Name \hfill June 2023
-%\end{itemize}
+\resheading{TECHNICAL SKILLS}
+\begin{itemize}[label={},leftmargin=0pt,itemsep=4pt]
+  \item \textbf{Languages used in research:} Python, C++, C, CUDA C++, SQL, Bash.
+  \item \textbf{GPU and machine-learning research:} CUDA, NVIDIA OptiX, cuSPARSE, PyTorch, NumPy, XGBoost.
+  \item \textbf{Profiling and performance analysis:} Nsight Systems, Nsight Compute, PyTorch Profiler, NVBit memory tracing, roofline analysis, CUDA events, GPU utilization and memory-behavior analysis.
+  \item \textbf{Database and data-processing experience:} TPC-H, MonetDB, TQP-style tensor query processing, TCUDB reproduction, sparse COO joins, relational and tensor algebra, correctness validation.
+  \item \textbf{Systems and development tools:} Linux/Ubuntu, Git, GitHub, Docker, gdb, vim.
+  \item \textbf{Hardware used:} NVIDIA RTX 3070, 3080, 3090, 4070, 4090, and 5090; Intel Core i7-14700.
+  \item \textbf{Additional software:} Windows, MATLAB, LTSpice, Multisim, Proteus.
+\end{itemize}
 
 \end{document}
