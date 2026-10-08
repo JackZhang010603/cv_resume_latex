@@ -6,7 +6,7 @@
 % latexmk -pdf -jobname=Hongrui_Zhang_Microsoft_Data_Systems_2026-10-07 resume.tex
 
 \documentclass[11pt]{article}
-\usepackage[letterpaper,margin=0.5in,nohead,includefoot,footskip=18pt]{geometry}
+\usepackage[letterpaper,margin=0.65in,nohead,includefoot,footskip=18pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{palatino}
@@ -31,26 +31,28 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\tabcolsep}{0pt}
-\setlist[itemize]{leftmargin=1.3em,itemsep=3pt,topsep=4pt,parsep=0pt,partopsep=0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=4pt,topsep=5pt,parsep=0pt,partopsep=0pt}
 \raggedbottom
 \urlstyle{same}
 \emergencystretch=1em
 
 % Section headings account for colorbox padding and stay with following text.
 \newcommand{\resheading}[1]{%
-  \par\addvspace{10pt}%
+  \par\addvspace{12pt}%
   \noindent\colorbox{sectiongray}{%
     \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\strut\small\textbf{#1}}%
-  }\par\nobreak\vspace{4pt}\nopagebreak[4]%
+  }\par\nobreak\vspace{5pt}\nopagebreak[4]%
 }
 
 % Wrapping titles leave a separate column for dates.
 \newcommand{\resumeentry}[3]{%
-  \par\addvspace{6pt}%
+  \par\addvspace{8pt}%
   \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}%
     \textbf{#1} & {\small #2}\\%
   \end{tabularx}\par\nobreak%
-  {\small #3\par}\nobreak\nopagebreak[4]%
+  \if\relax\detokenize{#3}\relax\else
+    {\small #3\par}\nobreak%
+  \fi\nopagebreak[4]%
 }
 
 \begin{document}
@@ -72,6 +74,7 @@
 
 \resumeentry{B.S. in Computer Engineering, University of California, San Diego}
   {Sep 2019 -- Sep 2023}
+  {}
 
 \resheading{RESEARCH EXPERIENCE}
 
@@ -88,24 +91,24 @@
   {Sep 2023 -- Sep 2025}
   {\textbf{ISCA '25} \textbar\ First author and conference presenter \textbar\ OptiX, CUDA, C++, Python}
 \begin{itemize}
-  \item Designed and implemented an OptiX/CUDA library mapping sparse matrix multiplication onto NVIDIA RT Cores, achieving up to 1.85$\times$ speedup over cuSPARSE.
+  \item Designed and implemented an OptiX/CUDA library mapping sparse matrix multiplication onto NVIDIA RT Cores, achieving a 1.85$\times$ geometric-mean over cuSPARSE.
   \item Proposed RT core architectural enhancements, including fused intersection-multiplication and hardware row accumulation, achieving 3.06$\times$ simulated speedup over cuSPARSE with only 0.2{\%} estimated area overhead.
   \item Integrated the library into a graph neural network training framework using CUDA and Python, achieving more than 3$\times$ speedup on NVIDIA RTX 4090.
 \end{itemize}
 
-\resheading{SELECTED PUBLICATION}
+\resheading{PUBLICATION}
 \textbf{Hongrui Zhang}, Yunan Zhang, and Hung-Wei Tseng.
 ``RTSpMSpM: Harnessing Ray Tracing for Efficient Sparse Matrix Computations.''
 \textit{52nd International Symposium on Computer Architecture (ISCA '25)}, 2025.
 \href{https://doi.org/10.1145/3695053.3731072}{\textbf{[DOI]}}
+\par\nobreak\vspace{3pt}
+\textit{IEEE Micro Top Picks 2026}\enspace---\enspace\textbf{Honorable Mention}\par
 
 \resheading{TECHNICAL SKILLS}
-\begin{itemize}[label={},leftmargin=0pt,itemsep=4pt]
-  \item \textbf{Languages used in research:} Python, C++, SQL, CUDA C++, C, Bash.
-  \item \textbf{Data systems:} Relational and tensor algebra, query execution, joins and aggregation, TPC-H, MonetDB, TQP-style tensor plans, TCUDB reproduction, sparse COO representations.
-  \item \textbf{Research software:} PyTorch, CUDA, NVIDIA OptiX, cuSPARSE, NumPy, XGBoost.
-  \item \textbf{Experimental methods and tools:} SQL correctness validation, controlled benchmarks, end-to-end evaluation, Nsight Systems, Nsight Compute, PyTorch Profiler, roofline analysis, NVBit memory tracing, CUDA events.
-  \item \textbf{Development tools:} Linux/Ubuntu, Git, Docker, gdb, vim.
+\begin{itemize}[label={},leftmargin=0pt,itemsep=5pt]
+  \item \textbf{Languages:} Python, C++, CUDA C++, SQL, C, Bash
+  \item \textbf{Frameworks \& Tools:} PyTorch, CUDA, NVIDIA OptiX, cuSPARSE, NumPy, Git, Docker, Linux
+  \item \textbf{GPU Profiling \& Data Systems:} Nsight Systems, Nsight Compute, PyTorch Profiler, TPC-H, sparse matrix operations, query execution
 \end{itemize}
 
 \end{document}
